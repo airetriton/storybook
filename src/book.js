@@ -50,11 +50,17 @@ $(document).ready(function() {
 	mainHTML();
 
     $(".story-title").on("click", function(event){
-		selectedStory = $(this).text();
+    selectedStory = $(this).text();
 
 		var newStoryIndex =  $(".story-title").index(this);
 		currentStory = newStoryIndex;
-		storyHTML(currentPage);
+    var wait = $("<img>");
+      wait.attr("src", "images/giphy.gif");
+      $(".main-area").html(wait);
+    setTimeout(function(){
+    storyHTML(currentPage);
+    }, 3000);
+		
 
     });
 });
@@ -63,18 +69,12 @@ function mainHTML() {
        	for (var i = 0; i < stories.length; i++) {
 			var books = $("<a>");
 			books.addClass("story-title");
-      // books.attr("href", "page.html");
 			books.attr("data-index", i);
 			books.text(stories[i].storyTitle);
 			$(".story").append(books);
 		}
 	};
 
-// GIPHY API FOR IMAGES
-// function getImage() {
-//     var topic = stories[currentStory][currentPage].topic;
-//     var queryURL = "https://api.giphy.com/v1/gifs/random?q=" + topic + "&api_key=6xfaAb1rplRM55HrAsCdiL6jn7DwEZLy&limit=10"
-// }
 
 function storyHTML(currentPage) {
 
