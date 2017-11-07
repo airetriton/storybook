@@ -20,9 +20,9 @@ $('tspan').css({
 })
 
 $('tspan').each(function(index) {
-  $(this).stop(true, true).delay(200 * index).animate({
+  $(this).stop(true, true).delay(170 * index).animate({
     'stroke-dashoffset': 0,
-  }, 600, function() {
+  }, 1000, function() {
     $(this).css('fill', '#8080ff')
   })
 })
