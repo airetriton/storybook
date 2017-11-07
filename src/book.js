@@ -98,7 +98,13 @@ function storyHTML(currentPage) {
             choiceBtn.addClass("text-center btn btn-warning btn-lg choice");
             choiceBtn.text(v);
             choiceBtn.on("click", function(event){
-                choiceUpdate(k);
+              var wait = $("<img>");
+              wait.attr("src", "images/giphy.gif");
+              $(".main-area").html(wait);
+            setTimeout(function(){
+            choiceUpdate(k);
+            }, 3000);
+                
             })
             $(".main-area").append(choiceBtn);
 
