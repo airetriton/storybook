@@ -10,6 +10,15 @@ body{
 	clear: both;
 }
 
+#wait-div {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
 #brand{
 	font-family: 'Josefin Sans', sans-serif;
 	color: purple;

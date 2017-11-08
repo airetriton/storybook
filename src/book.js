@@ -122,9 +122,12 @@ $(document).ready(function() {
 
 		var newStoryIndex =  $(".story-title").index(this);
 		currentStory = newStoryIndex;
+    var waitDiv = $("<div>");
+    waitDiv.attr("id", "wait-div");
     var wait = $("<img>");
-      wait.attr("src", "images/giphy.gif");
-      $(".main-area").html(wait);
+    wait.attr("src", "images/giphy.gif");
+    waitDiv.append(wait);
+    $(".main-area").html(waitDiv);
     setTimeout(function(){
     storyHTML(currentPage);
     }, 3000);
@@ -136,7 +139,7 @@ $(document).ready(function() {
         githubSignin();
       })
 
-    // $("#facebook").on("click", function(){
+    // $("#facebook").on("login", function(){
     //     checkLoginState()
     //   })
 });
@@ -174,9 +177,12 @@ function storyHTML(currentPage) {
             choiceBtn.addClass("text-center btn btn-warning btn-lg choice");
             choiceBtn.text(v);
             choiceBtn.on("click", function(event){
+              var waitDiv = $("<div>");
+              waitDiv.attr("id", "wait-div");
               var wait = $("<img>");
               wait.attr("src", "images/giphy.gif");
-              $(".main-area").html(wait);
+              waitDiv.append(wait);
+              $(".main-area").html(waitDiv);
             setTimeout(function(){
             choiceUpdate(k);
             }, 3000);
