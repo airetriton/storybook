@@ -128,9 +128,9 @@ $(document).ready(function() {
     wait.attr("src", "images/giphy.gif");
     waitDiv.append(wait);
     $(".main-area").html(waitDiv);
-    setTimeout(function(){
-    storyHTML(currentPage);
-    }, 3000);
+      setTimeout(function(){
+      storyHTML(currentPage);
+      }, 3000);
 		
 
     });
@@ -139,9 +139,9 @@ $(document).ready(function() {
         githubSignin();
       })
 
-    // $("#facebook").on("login", function(){
-    //     checkLoginState()
-    //   })
+    $("#facebook").on("login", function(){
+        checkLoginState();
+      })
 });
 
 function mainHTML() {
