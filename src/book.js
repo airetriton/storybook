@@ -136,9 +136,9 @@ $(document).ready(function() {
         githubSignin();
       })
 
-    $("#facebook").on("click", function(){
-        checkLoginState()
-      })
+    // $("#facebook").on("click", function(){
+    //     checkLoginState()
+    //   })
 });
 
 function mainHTML() {
