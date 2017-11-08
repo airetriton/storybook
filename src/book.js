@@ -139,7 +139,7 @@ $(document).ready(function() {
         githubSignin();
       })
 
-    $("#facebook").on("login", function(){
+    $("#facebook").on("click", "login", function(){
         checkLoginState();
       })
 });
