@@ -6,8 +6,9 @@ body{
 	display: flex;
 }
 
-.choiceBtn {
+.choice {
 	clear: both;
+	margin: 3% 5%;
 }
 
 #wait-div {
@@ -182,4 +183,8 @@ body{
 	font-family: 'Schoolbell', cursive;
 	font-size: 25px;
 	font-weight: bold;
+}
+
+.text {
+	margin-left: 5%;
 }

@@ -2,6 +2,8 @@ var selectedStory;
 var selectedChoice;
 var currentStory = 0;
 var currentPage = "pageStart";
+var newSound = stories[currentStory][currentPage].sound;
+  console.log(newSound);
 
 // FIREBASE AUTHENTICATION
 var config = {
@@ -154,10 +156,35 @@ function mainHTML() {
 		}
 	};
 
+// // function sound() {
+// //   var sound = $(this).attr("data-sound");
+//       var queryURL = "https://freesound.org/apiv2/search/text/?query="+newSound+"&filter=type:mp3&sort=duration_asc&token=0dLPbWt3qJbyxXWL3lfGKUHW575Bv5ThsCxITVEW";
+              
+//               var queryURL2 = "https://freesound.org/apiv2/sounds/51715/"; 
+
+//                   $.ajax({
+//                       url: queryURL,
+//                       method: "GET"
+//                     })
+//                     .done(function(response) {
+//                       var results = response.data;
+//                       console.log(response)
+//                     });
+
+//                   $.ajax({
+//                       url: queryURL2,
+//                       method: "GET",
+//                       headers: {"Authorization": "Token JkKEUZNbmrCvQMQGlaW9OaKdash40HKv1a4Tl5Cm"}
+//                       })
+//                       .done(function(response) {
+//                         var results = response.previews;
+//                         console.log(results["preview-hq-mp3"]);
+//                       })
+              
+// // }
 
 function storyHTML(currentPage) {
-
-
+  
 	var storyHTML = "<h1>" + stories[currentStory].storyTitle + "</h1>";
     $(".main-area").html(storyHTML);
     var storyDiv = $("<div>");
@@ -175,6 +202,7 @@ function storyHTML(currentPage) {
             //display the key and value pair
             var choiceBtn = $("<button>");
             choiceBtn.addClass("text-center btn btn-warning btn-lg choice");
+            // choiceBtn.attr("src", results["preview-hq-mp3"]);
             choiceBtn.text(v);
             choiceBtn.on("click", function(event){
               var waitDiv = $("<div>");
