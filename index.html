@@ -29,63 +29,42 @@
 <body>
 <!-- Top Nav -->
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <nav class="navbar navbar-default navbar-fixed-top" id="navbar" role="navigation">
-        <div class="navbar-header">
-          <a href="index.html"><img id="purpletree" src="images/purpletree.png"></a>
-          <span id="text">Login:</span>
-          <ul class="nav navbar-nav navbar-right">
-            <li><img id="github" src="images/github.png"></li>
-            <li><img id="facebook" src="images/facebook.png"></li>
-          </ul>
-          <div id="status"></div>
-          <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-</fb:login-button>
-        </div> 
-      </nav>
-    </div>
-  </div>
-</div>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <!-- main body container -->
-      <div class="container  main-area">
-        <!-- Div for animated Title -->
-        <div class="title"> 
-          <svg width="530" height="75">
-          </svg>
-        </div>
-        <!-- Story 1 Div -->
-        <button id="story1" class="story"></button>
-      <!-- Story 2 Div-->
-        <div id="story2">
-          <div>
-            <h1 id="story2title">Astro Goes to the Moon</h1>
+
+  <nav class="navbar navbar-default navbar-fixed-top" id="navbar" role="navigation">
+    <div class="navbar-header">
+      <a href="index.html"><img id="purpletree" src="images/purpletree.png"></a>
+      <span id="text">Login:</span>
+      <ul class="nav navbar-nav navbar-right">
+        <li><img id="github" src="images/github.png"></li>
+        <li><img id="facebook" src="images/facebook.png"></li>
+      </ul>
+      <div id="status"></div>
+      <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+  </fb:login-button>
+    </div> 
+  </nav>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <!-- main body container -->
+        <div class="main-area">
+          <!-- Div for animated Title -->
+          <div class="title"> 
+            <svg width="530" height="75">
+            </svg>
           </div>
-        </div>
-      <!-- Story 3 Div -->
-        <div id="story3">
-          <div>
-            <h1 id="story3title">Mystery of the Sunken Treasure</h1>
-          </div>
-        </div>
-      <!-- Stpry 4 Div -->
-        <div id="story4">
-          <div>
-            <h1 id="story4title">The Dancing Cat</h1>
-          </div>
-        </div>
-            </div>  
-          </div>
+          <!-- Story 1 Div -->
+          <button id="story1" class="story"></button>
+        <!-- Story 2 Div-->
+          <button id="story2"><h1 id="story2title">Astro Goes to the Moon</h1></button>
+        <!-- Story 3 Div -->
+          <button id="story3"><h1 id="story3title">Mystery of the Sunken Treasure</h1></button>
+        <!-- Stpry 4 Div -->
+          <button id="story4"><h1 id="story4title">The Dancing Cat</h1></button>
         </div>
       </div>
     </div>
   </div>
-</div>
-  
   <!-- Footer -->
   <nav class="navbar navbar-default navbar-fixed-bottom" id="navbottom">
     <div class="container-fluid">

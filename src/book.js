@@ -86,7 +86,7 @@ function mainHTML() {
 	}
 };
 
-$(document).on("click", ".choice", function() {
+$(document).on("click", ".choice, .story-title", function() {
   var sound = $(this).attr("data-sound");
   var queryURL = "https://freesound.org/apiv2/search/text/?query="+newSound+"&filter=type:mp3&sort=duration_asc&token=0dLPbWt3qJbyxXWL3lfGKUHW575Bv5ThsCxITVEW";
           

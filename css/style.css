@@ -110,6 +110,7 @@ h1 {
 
 .main-area {
 	margin: 3% 2%;
+	min-height: 100%;
 }
 
 #story1{
@@ -120,6 +121,7 @@ h1 {
 	background-size: cover;
 	background-repeat: no-repeat;	
 	border-radius: 25px;
+	margin-bottom: 1%;
 }
 
 .story-title {
@@ -127,10 +129,8 @@ h1 {
 	font-family: 'Schoolbell', cursive;
 	color: #99004d;
 	text-shadow: 2px 2px yellow;
-	margin-top: .5%;
 	font-size: 45px;
 	font-weight:bold;
-	margin-top: 5%;
 }
 
 .story-title:hover {
@@ -139,10 +139,13 @@ h1 {
 
 #story2{
 	height: 170px;
+	width: 100%;
+	outline: none;
 	background-image: url("../images/earth.png");
 	background-size: cover;
 	background-repeat: no-repeat;	
 	border-radius: 25px;
+	margin-bottom: 1%;
 }
 
 #story2title{
@@ -158,10 +161,13 @@ h1 {
 
 #story3{
 	height: 170px;
+	width: 100%;
+	outline: none;
 	background-image: url("../images/beach.png");
 	background-size: cover;
 	background-repeat: no-repeat;
 	border-radius: 25px;
+	margin-bottom: 1%;
 }
 
 #story3title{
@@ -177,11 +183,14 @@ h1 {
 
 #story4{
 	height: 170px;
+	width: 100%;
+	outline: none;
 	background-image: url("../images/house.png");
 	background-size: cover;
 	background-repeat: no-repeat;
 	margin: 5px;
 	border-radius: 25px;
+	margin-bottom: 1%;
 }
 
 #story4title{
