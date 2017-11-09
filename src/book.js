@@ -3,9 +3,8 @@ var selectedChoice;
 var currentStory = 0;
 var currentPage = "pageStart";
 var newSound = stories[0].pageStart.sound;
-  console.log(newSound);
 
-// FIREBASE AUTHENTICATION
+// FIREBASE GITHUB AUTHENTICATION
 var config = {
         apiKey: "AIzaSyAWUtB7pvGbWyUCdRJl0cLuf2_Ln0dWI5A",
         authDomain: "purple-tree-5f62c.firebaseapp.com",
@@ -46,18 +45,14 @@ var config = {
            });
         }
 
-
-        
-
-
 $(document).ready(function() {
     
 	mainHTML();
 
-    $(".story-title").on("click", function(event){
+    $(".story").on("click", function(event){
     selectedStory = $(this).text();
 
-		var newStoryIndex =  $(".story-title").index(this);
+		var newStoryIndex =  $(".story").index(this);
 		currentStory = newStoryIndex;
     var waitDiv = $("<div>");
     waitDiv.attr("id", "wait-div");
@@ -82,14 +77,14 @@ $(document).ready(function() {
 });
 
 function mainHTML() {
-       	for (var i = 0; i < stories.length; i++) {
-			var books = $("<a>");
-			books.addClass("story-title");
-			books.attr("data-index", i);
-			books.text(stories[i].storyTitle);
-			$(".story").append(books);
-		}
-	};
+  for (var i = 0; i < stories.length; i++) {
+		var books = $("<a>");
+		books.addClass("story-title");
+		books.attr("data-index", i);
+		books.text(stories[i].storyTitle);
+		$(".story").append(books);
+	}
+};
 
 $(document).on("click", ".choice", function() {
   var sound = $(this).attr("data-sound");
@@ -103,7 +98,6 @@ $(document).on("click", ".choice", function() {
                 })
                 .done(function(response) {
                   var results = response.data;
-                  console.log(response)
                 });
 
               $.ajax({
@@ -113,8 +107,6 @@ $(document).on("click", ".choice", function() {
                   })
                   .done(function(response) {
                     var results = response.previews;
-                    console.log(results["preview-hq-mp3"]);
-
                     //create audio element and assign it to a variable
                     var storySound = document.createElement("Audio");
                     //attribute the sound file
@@ -129,67 +121,55 @@ $(document).on("click", ".choice", function() {
 function storyHTML(currentPage) {
   
 var newGif = stories[currentStory][currentPage].topic;
-  console.log(newGif);
+var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + newGif + "&rating=g&api_key=NfjGwXVTVCgEGMawDPEr5a6iJRkDaNTJ&limit=1"
 
-  var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + newGif + "&rating=g&api_key=NfjGwXVTVCgEGMawDPEr5a6iJRkDaNTJ&limit=1"
+  $.ajax({
+      url: queryURL,
+      method: "GET"
+  })
+  .done(function(response) {
+    var results = response.data;
+    var storyImage =  $("<img>");
+    storyImage.addClass("gif");
+    storyImage.attr("data-state", "still");
+    storyImage.attr("src", results[0].images.fixed_width.url);
+    storyDiv.append(storyImage);
+  });
 
-      $.ajax({
-          url: queryURL,
-          method: "GET"
-        })
-        .done(function(response) {
-          var results = response.data;
-          console.log(response);
-          // var gifDiv = $("<div class='storyDiv'>");
-          var storyImage =  $("<img>");
-            // $(selector).attr(attribute,value)
-            storyImage.addClass("gif");
-            //set data-state to still by default
-            storyImage.attr("data-state", "still");
+var storyHTML = "<h1>" + stories[currentStory].storyTitle + "</h1>";
+  $(".main-area").html(storyHTML);
+  var storyDiv = $("<div>");
+  storyDiv.attr("id", "story-div");
+  var storyText = $("<p>");
+  storyText.addClass("text");
+  storyText.text(stories[currentStory][currentPage].text);
+  storyDiv.append(storyText);
+  $(".main-area").append(storyDiv);
+      $.each(stories[currentStory][currentPage].nextPage, function(k, v) {
+          //display the key and value pair
+          var choiceBtn = $("<button>");
+          choiceBtn.addClass("text-center btn btn-default btn-lg choice");
+          choiceBtn.text(v);
+          choiceBtn.on("click", function(event){
+            var waitDiv = $("<div>");
+            waitDiv.attr("id", "wait-div");
+            var wait = $("<img>");
+            wait.attr("src", "images/giphy.gif");
+            waitDiv.append(wait);
+            $(".main-area").html(waitDiv);
+          setTimeout(function(){
+          choiceUpdate(k);
+          }, 1000);
+              
+          })
+          $(".main-area").append(choiceBtn);
 
-            storyImage.attr("src", results[0].images.fixed_width.url);
-
-            storyDiv.append(storyImage);
-            console.log(storyDiv);
-          });
-
-
-	var storyHTML = "<h1>" + stories[currentStory].storyTitle + "</h1>";
-    $(".main-area").html(storyHTML);
-    var storyDiv = $("<div>");
-    storyDiv.attr("id", "story-div");
-    var storyText = $("<p>");
-    storyText.addClass("text");
-    storyText.text(stories[currentStory][currentPage].text);
-    storyDiv.append(storyText);
-    $(".main-area").append(storyDiv);
-        $.each(stories[currentStory][currentPage].nextPage, function(k, v) {
-            //display the key and value pair
-            var choiceBtn = $("<button>");
-            choiceBtn.addClass("text-center btn btn-default btn-lg choice");
-            // choiceBtn.attr("src", results["preview-hq-mp3"]);
-            choiceBtn.text(v);
-            choiceBtn.on("click", function(event){
-              var waitDiv = $("<div>");
-              waitDiv.attr("id", "wait-div");
-              var wait = $("<img>");
-              wait.attr("src", "images/giphy.gif");
-              waitDiv.append(wait);
-              $(".main-area").html(waitDiv);
-            setTimeout(function(){
-            choiceUpdate(k);
-            }, 1000);
-                
-            })
-            $(".main-area").append(choiceBtn);
-
-        });        
+      });        
 
     
 };
 
-function choiceUpdate(choice){
-    // console.log(choice);
+function choiceUpdate(choice) {
     if (choice.indexOf("Story") > -1){
         if (choice.indexOf("Another") > -1){
             location.reload();
