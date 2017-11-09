@@ -9,6 +9,13 @@ body{
 .choice {
 	clear: both;
 	margin: 3% 5%;
+	color: white;
+	background-color: #8080ff;
+}
+
+.choice:hover {
+	background-color: #ff33bb;
+	color: white;
 }
 
 #wait-div {
@@ -49,7 +56,10 @@ body{
 	text-shadow: 2px 2px #1a8cff;
 }
 
-#navbottom{
+#navbottom {
+	position: fixed;
+	bottom: 0;
+	left: 0;
 	margin-top: 15px;
 	margin-bottom: 0px;
 }
@@ -95,16 +105,22 @@ body{
 	border-radius: 25px;
 }
 
-.story-title{
+.story-title {
+	position: relative;
+	top: 30%;
+	left: 2%;
+	text-decoration: none;
 	font-family: 'Schoolbell', cursive;
 	color: #99004d;
 	text-shadow: 2px 2px yellow;
 	margin-top: .5%;
 	font-size: 45px;
 	font-weight:bold;
-	padding-top: 60px;
-	padding-left: 50px;
-	margin: auto;
+	margin-top: 5%;
+}
+
+.story-title:hover {
+	text-decoration: none;
 }
 
 #story2{
@@ -186,5 +202,9 @@ body{
 }
 
 .text {
-	margin-left: 5%;
+	margin-right: 5%;
+}
+
+img.gif {
+	width: 350px;
 }

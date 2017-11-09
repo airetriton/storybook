@@ -36,11 +36,11 @@
           <a href="index.html"><img id="purpletree" src="images/purpletree.png"></a>
           <span id="text">Login:</span>
           <ul class="nav navbar-nav navbar-right">
-            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-</fb:login-button>
             <li><img id="github" src="images/github.png"></li>
             <li><img id="facebook" src="images/facebook.png"></li>
           </ul>
+          <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
         </div> 
       </nav>
     </div>
@@ -49,59 +49,51 @@
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <!-- main body container -->
       <div class="container main-area">
+        <!-- Div for animated Title -->
+        <div class="title"> 
+          <svg width="530" height="75">
+          </svg>
+        </div>
+        <!-- Story 1 Div -->
+        <div id="story1" class="story"></div>
+      <!-- Story 2 Div-->
+        <div id="story2">
+          <div>
+            <h1 id="story2title">Astro Goes to the Moon</h1>
+          </div>
+        </div>
+      <!-- Story 3 Div -->
+        <div id="story3">
+          <div>
+            <h1 id="story3title">Mystery of the Sunken Treasure</h1>
+          </div>
+        </div>
+      <!-- Stpry 4 Div -->
+        <div id="story4">
+          <div>
+            <h1 id="story4title">The Dancing Cat</h1>
+          </div>
+        </div>
+            </div>  
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-
-
-
-
-
-<!-- Div for animated Title -->
-  <div class="title"> 
-    <svg width="530" height="75">
-    </svg>
-  </div>
-
-<!-- Story 1 Div -->
-  <div id="story1" class="story"></div>
-<!-- Story 2 Div-->
-  <div id="story2">
-    <div>
-      <h1 id="story2title">Astro Goes to the Moon</h1>
+  <!-- Footer -->
+  <nav class="navbar navbar-default navbar-bottom" id="navbottom">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <img id="purpletree" src="images/purpletree.png">
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active" id="brand"><a href="#">Purple Tree Studios</a></li>
+        <li><a href="#">About us</a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+      </ul>
     </div>
-  </div>
-<!-- Story 3 Div -->
-  <div id="story3">
-    <div>
-      <h1 id="story3title">Mystery of the Sunken Treasure</h1>
-    </div>
-  </div>
-<!-- Stpry 4 Div -->
-  <div id="story4">
-    <div>
-      <h1 id="story4title">The Dancing Cat</h1>
-    </div>
-  </div>
-
-<!-- end of main body container -->
-</div>
-
-<!-- Footer -->
-<nav class="navbar navbar-default navbar-bottom" id="navbottom">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <img id="purpletree" src="images/purpletree.png">
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active" id="brand"><a href="#">Purple Tree Studios</a></li>
-      <li><a href="#">About us</a></li>
-      <li><a href="#"></a></li>
-      <li><a href="#"></a></li>
-    </ul>
-  </div>
-</nav>
-
+  </nav>
 </body>
 </html>
 

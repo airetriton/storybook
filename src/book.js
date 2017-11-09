@@ -231,7 +231,7 @@ var newGif = stories[currentStory][currentPage].topic;
         $.each(stories[currentStory][currentPage].nextPage, function(k, v) {
             //display the key and value pair
             var choiceBtn = $("<button>");
-            choiceBtn.addClass("text-center btn btn-warning btn-lg choice");
+            choiceBtn.addClass("text-center btn btn-default btn-lg choice");
             // choiceBtn.attr("src", results["preview-hq-mp3"]);
             choiceBtn.text(v);
             choiceBtn.on("click", function(event){
