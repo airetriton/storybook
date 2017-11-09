@@ -1,5 +1,5 @@
 body{
-	background-image: url("paper.jpg");
+	background-image: url("../images/paper.jpg");
 }
 
 button {
@@ -9,6 +9,7 @@ button {
 
 h1 {
 	font-family: 'Schoolbell', cursive;
+	text-shadow: 2px 2px 4px #ccc;
 	font-weight: bold;
 }
 
@@ -46,7 +47,7 @@ h1 {
 }
 
 #navbar{
-	background-image: url("rainbow.jpg");
+	background-image: url("../images/rainbow.jpg");
 	color: white;
 	margin-bottom: 20px;
 }
@@ -111,7 +112,7 @@ h1 {
 	height: 170px;
 	width: 100%;
 	outline: none;
-	background-image: url("monster.png");
+	background-image: url("../images/monster.png");
 	background-size: cover;
 	background-repeat: no-repeat;	
 	border-radius: 25px;
@@ -134,7 +135,7 @@ h1 {
 
 #story2{
 	height: 170px;
-	background-image: url("earth.png");
+	background-image: url("../images/earth.png");
 	background-size: cover;
 	background-repeat: no-repeat;	
 	border-radius: 25px;
@@ -153,7 +154,7 @@ h1 {
 
 #story3{
 	height: 170px;
-	background-image: url("beach.png");
+	background-image: url("../images/beach.png");
 	background-size: cover;
 	background-repeat: no-repeat;
 	border-radius: 25px;
@@ -172,7 +173,7 @@ h1 {
 
 #story4{
 	height: 170px;
-	background-image: url("house.png");
+	background-image: url("../images/house.png");
 	background-size: cover;
 	background-repeat: no-repeat;
 	margin: 5px;
