@@ -218,40 +218,40 @@ var newGif = stories[currentStory][currentPage].topic;
             //set data-state to still by default
             storyImage.attr("data-state", "still");
 
-            storyImage.attr("src", results[0].images.fixed_width_still.url);
-            storyImage.attr("data-animate", results[0].images.fixed_width.url); 
-            storyImage.attr("data-still", results[0].images.fixed_width_still.url);
+            storyImage.attr("src", results[0].images.fixed_width.url);
+            // storyImage.attr("data-animate", results[0].images.fixed_width.url); 
+            // storyImage.attr("data-still", results[0].images.fixed_width_still.url);
             // gifDiv.prepend(storyImage);
 
             storyDiv.append(storyImage);
             console.log(storyDiv);
           });
        
-       $(document).on("click", ".gif", function() {
-        // make a variable named state and then store the image's data-state into it. Use the .attr() method for this.
-        var state = $(this).attr("data-state");
+      //  $(document).on("click", ".gif", function() {
+      //   // make a variable named state and then store the image's data-state into it. Use the .attr() method for this.
+      //   var state = $(this).attr("data-state");
 
-            console.log(state);
+      //       console.log(state);
        
-        // Check if the variable state is equal to 'still',
-        // then update the src attribute of this image to it's data-animate value, and update the data-state attribute to 'animate'.
+      //   // Check if the variable state is equal to 'still',
+      //   // then update the src attribute of this image to it's data-animate value, and update the data-state attribute to 'animate'.
 
-        // If state is equal to 'animate', then update the src attribute of this
-        // image to it's data-still value and update the data-state attribute to 'still'
+      //   // If state is equal to 'animate', then update the src attribute of this
+      //   // image to it's data-still value and update the data-state attribute to 'still'
         
-        if(state === "still") {
-          var animateURL = $(this).attr("data-animate");
-          $(this).attr("src", animateURL);
-          $(this).attr("data-state", "animate");
-        }
+      //   if(state === "still") {
+      //     var animateURL = $(this).attr("data-animate");
+      //     $(this).attr("src", animateURL);
+      //     $(this).attr("data-state", "animate");
+      //   }
 
-        else {
-          var stillURL = $(this).attr("data-still");
-          $(this).attr("src", stillURL);
-            $(this).attr("data-state", "still");
-        }
+      //   else {
+      //     var stillURL = $(this).attr("data-still");
+      //     $(this).attr("src", stillURL);
+      //       $(this).attr("data-state", "still");
+      //   }
 
-      });
+      // });
 
 
 	var storyHTML = "<h1>" + stories[currentStory].storyTitle + "</h1>";
