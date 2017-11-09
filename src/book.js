@@ -2,7 +2,7 @@ var selectedStory;
 var selectedChoice;
 var currentStory = 0;
 var currentPage = "pageStart";
-var newSound = stories[currentStory][currentPage].sound;
+var newSound = stories[0].pageStart.sound;
   console.log(newSound);
 
 // FIREBASE AUTHENTICATION
@@ -47,72 +47,72 @@ var config = {
         }
 
 
-        //FACEBOOK AUTHENTICATION
-        function statusChangeCallback(response) {
-         console.log('statusChangeCallback');
-         console.log(response);
-         if (response.status === 'connected') {
-           testAPI();
-         } else {
-           document.getElementById('status').innerHTML = 'Please log ' +
-             'into this app.';
-         }
-       }
+       //  //FACEBOOK AUTHENTICATION
+       //  function statusChangeCallback(response) {
+       //   console.log('statusChangeCallback');
+       //   console.log(response);
+       //   if (response.status === 'connected') {
+       //     testAPI();
+       //   } else {
+       //     document.getElementById('status').innerHTML = 'Please log ' +
+       //       'into this app.';
+       //   }
+       // }
 
        
-          function checkLoginState() {
-         FB.getLoginStatus(function(response) {
-           statusChangeCallback(response);
-         });
-       }
+       //    function checkLoginState() {
+       //   FB.getLoginStatus(function(response) {
+       //     statusChangeCallback(response);
+       //   });
+       // }
        
 
-       window.fbAsyncInit = function() {
-       FB.init({
-         appId      : '1994680544133095',
-         cookie     : true,  // enable cookies to allow the server to access
-                             // the session
-         xfbml      : true,  // parse social plugins on this page
-         version    : 'v2.8' // use graph api version 2.8
-       });
+       // window.fbAsyncInit = function() {
+       // FB.init({
+       //   appId      : '1994680544133095',
+       //   cookie     : true,  // enable cookies to allow the server to access
+       //                       // the session
+       //   xfbml      : true,  // parse social plugins on this page
+       //   version    : 'v2.8' // use graph api version 2.8
+       // });
 
-       // Now that we've initialized the JavaScript SDK, we call
-       // FB.getLoginStatus().  This function gets the state of the
-       // person visiting this page and can return one of three states to
-       // the callback you provide.  They can be:
-       //
-       // 1. Logged into your app ('connected')
-       // 2. Logged into Facebook, but not your app ('not_authorized')
-       // 3. Not logged into Facebook and can't tell if they are logged into
-       //    your app or not.
-       //
-       // These three cases are handled in the callback function.
+       // // Now that we've initialized the JavaScript SDK, we call
+       // // FB.getLoginStatus().  This function gets the state of the
+       // // person visiting this page and can return one of three states to
+       // // the callback you provide.  They can be:
+       // //
+       // // 1. Logged into your app ('connected')
+       // // 2. Logged into Facebook, but not your app ('not_authorized')
+       // // 3. Not logged into Facebook and can't tell if they are logged into
+       // //    your app or not.
+       // //
+       // // These three cases are handled in the callback function.
 
-       FB.getLoginStatus(function(response) {
-         statusChangeCallback(response);
-       });
+       // FB.getLoginStatus(function(response) {
+       //   statusChangeCallback(response);
+       // });
 
-       };
+       // };
 
-       // Load the SDK asynchronously
-       (function(d, s, id) {
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) return;
-         js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/en_US/sdk.js";
-         fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
+       // // Load the SDK asynchronously
+       // (function(d, s, id) {
+       //   var js, fjs = d.getElementsByTagName(s)[0];
+       //   if (d.getElementById(id)) return;
+       //   js = d.createElement(s); js.id = id;
+       //   js.src = "//connect.facebook.net/en_US/sdk.js";
+       //   fjs.parentNode.insertBefore(js, fjs);
+       // }(document, 'script', 'facebook-jssdk'));
 
-       // Here we run a very simple test of the Graph API after login is
-       // successful.  See statusChangeCallback() for when this call is made.
-       function testAPI() {
-         console.log('Welcome!  Fetching your information.... ');
-         FB.api('/me', function(response) {
-           console.log('Successful login for: ' + response.name);
-           document.getElementById('status').innerHTML =
-             'Thanks for logging in, ' + response.name + '!';
-         });
-       }
+       // // Here we run a very simple test of the Graph API after login is
+       // // successful.  See statusChangeCallback() for when this call is made.
+       // function testAPI() {
+       //   console.log('Welcome!  Fetching your information.... ');
+       //   FB.api('/me', function(response) {
+       //     console.log('Successful login for: ' + response.name);
+       //     document.getElementById('status').innerHTML =
+       //       'Thanks for logging in, ' + response.name + '!';
+       //   });
+       // }
 
 
 $(document).ready(function() {
@@ -132,7 +132,7 @@ $(document).ready(function() {
     $(".main-area").html(waitDiv);
       setTimeout(function(){
       storyHTML(currentPage);
-      }, 3000);
+      }, 1000);
 		
 
     });
@@ -156,35 +156,48 @@ function mainHTML() {
 		}
 	};
 
-// // function sound() {
-// //   var sound = $(this).attr("data-sound");
-//       var queryURL = "https://freesound.org/apiv2/search/text/?query="+newSound+"&filter=type:mp3&sort=duration_asc&token=0dLPbWt3qJbyxXWL3lfGKUHW575Bv5ThsCxITVEW";
-              
-//               var queryURL2 = "https://freesound.org/apiv2/sounds/51715/"; 
+$(document).on("click", ".choice", function() {
+  var sound = $(this).attr("data-sound");
+  var queryURL = "https://freesound.org/apiv2/search/text/?query="+newSound+"&filter=type:mp3&sort=duration_asc&token=0dLPbWt3qJbyxXWL3lfGKUHW575Bv5ThsCxITVEW";
+          
+          var queryURL2 = "https://freesound.org/apiv2/sounds/51715/"; 
 
-//                   $.ajax({
-//                       url: queryURL,
-//                       method: "GET"
-//                     })
-//                     .done(function(response) {
-//                       var results = response.data;
-//                       console.log(response)
-//                     });
+              $.ajax({
+                  url: queryURL,
+                  method: "GET"
+                })
+                .done(function(response) {
+                  var results = response.data;
+                  console.log(response)
+                });
 
-//                   $.ajax({
-//                       url: queryURL2,
-//                       method: "GET",
-//                       headers: {"Authorization": "Token JkKEUZNbmrCvQMQGlaW9OaKdash40HKv1a4Tl5Cm"}
-//                       })
-//                       .done(function(response) {
-//                         var results = response.previews;
-//                         console.log(results["preview-hq-mp3"]);
-//                       })
+              $.ajax({
+                  url: queryURL2,
+                  method: "GET",
+                  headers: {"Authorization": "Token JkKEUZNbmrCvQMQGlaW9OaKdash40HKv1a4Tl5Cm"}
+                  })
+                  .done(function(response) {
+                    var results = response.previews;
+                    console.log(results["preview-hq-mp3"]);
+
+                    //create audio element and assign it to a variable
+                    var storySound = document.createElement("Audio");
+                    //attribute the sound file
+                    storySound.setAttribute("src", results["preview-hq-mp3"]);
+
+                    storySound.load();
+
+                    storySound.play();
+                  });
               
-// // }
+
+});
 
 function storyHTML(currentPage) {
   
+
+
+
 	var storyHTML = "<h1>" + stories[currentStory].storyTitle + "</h1>";
     $(".main-area").html(storyHTML);
     var storyDiv = $("<div>");
@@ -213,7 +226,7 @@ function storyHTML(currentPage) {
               $(".main-area").html(waitDiv);
             setTimeout(function(){
             choiceUpdate(k);
-            }, 3000);
+            }, 1000);
                 
             })
             $(".main-area").append(choiceBtn);
