@@ -27,6 +27,10 @@ h1 {
 	align-items: flex-start;
 	align-content: center;
 	margin: 3% 0;
+	padding: 2%;
+	border-style: groove;
+    border-color: coral;
+    border-width: 17px;
 }
 
 .choice {
