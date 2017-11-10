@@ -20,9 +20,14 @@ h1 {
 	text-align: center;
 }
 
-.container {
-	width: 100%;
-	margin-left: 0!important;
+.wrap {
+		display: inline-table;
+}
+
+.social ul li {
+    float: left;
+    list-style: none;
+    padding-right: 15px;
 }
 
 #story-div {
@@ -81,15 +86,6 @@ h1 {
 	padding: 0;
 }
 
-.navbar-nav {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: flex-end;
-	align-items: stretch;
-	align-content: stretch;
-}
-
 #navbrand{
 	color: white;
 	font-family: 'Schoolbell', cursive;
@@ -118,8 +114,7 @@ h1 {
 #github {
 	height: 50px;
 	width: 50px;
-	float: right;
-	margin-right: 70%;
+	margin-right: 5%;
 }
 
 #purpletree{
@@ -248,8 +243,8 @@ h1 {
 }
 
 #text{
-	margin-top: 5%;
-	margin-right: 20%;
+	margin-top: 2%;
+	margin-right: 5%;
 	font-family: 'Schoolbell', cursive;
 	font-size: 25px;
 	font-weight: bold;
@@ -271,30 +266,62 @@ h1 {
 
 @media only screen and (max-width: 768px) {
 	#navbar {
-		
-		/*width: 100%;*/
 		height: 60px;
+		width: auto;
+	}
+
+	.wrap {
+		display: inline-table;
+	}
+
+	#text {
+		margin: 0;
+	}
+
+	#purpletree {
+		width: 58px;
+		height: 58px;
 	}
 
 	#github {
+		float: none;
 		margin-right: 1%;
 	}
 
 	.main-area {
+		margin: 0;
 		size: cover;
 	}
 
-	svg {
+	.title {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		align-content: center;
+	}
+
+	.story {
 		width: 100%;
 	}
 
+
+	
+	a {
+		padding: 2px 7px!important;
+		height: 58px;
+	}
+
 	.footer {
-		display: flex;
+		height: 60px;
+		/*display: flex;
 		flex-direction: row;
 		flex-wrap: nowrap;
 		justify-content: center;
 		align-items: flex-end;
-		align-content: stretch;
+		align-content: stretch;*/
 	}
 
 }
