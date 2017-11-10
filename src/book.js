@@ -129,11 +129,11 @@ var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + newGif + "&rating=g&a
   })
   .done(function(response) {
     var results = response.data;
-    var storyImage =  $("<img>");
+    var storyImage = $("<img>");
     storyImage.addClass("gif");
     storyImage.attr("data-state", "still");
     storyImage.attr("src", results[0].images.fixed_width.url);
-    storyDiv.append(storyImage);
+    storyText.prepend(storyImage);
   });
 
 var storyHTML = "<h1>" + stories[currentStory].storyTitle + "</h1>";
@@ -157,9 +157,9 @@ var storyHTML = "<h1>" + stories[currentStory].storyTitle + "</h1>";
             wait.attr("src", "images/giphy.gif");
             waitDiv.append(wait);
             $(".main-area").html(waitDiv);
-          setTimeout(function(){
-          choiceUpdate(k);
-          }, 1000);
+              setTimeout(function(){
+              choiceUpdate(k);
+              }, 1000);
               
           })
           $(".main-area").append(choiceBtn);

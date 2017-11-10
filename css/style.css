@@ -17,25 +17,26 @@ h1 {
 	font-family: 'Schoolbell', cursive;
 	text-shadow: 2px 2px 4px #ccc;
 	font-weight: bold;
+	text-align: center;
 }
 
 #story-div {
 	display: flex;
-	flex-direction: row-reverse;
-	flex-wrap: nowrap;
+	flex-direction: row;
+	flex-wrap: wrap-reverse;
 	justify-content: center;
-	align-items: flex-start;
-	align-content: center;
+	align-items: center;
+	align-content: stretch;
 	margin: 3% 0;
-	padding: 2%;
+	/*padding: 2%;
 	border-style: groove;
     border-color: coral;
-    border-width: 17px;
+    border-width: 17px;*/
 }
 
 .choice {
 	clear: both;
-	margin: 3% 10%;
+	margin: 3% 8%;
 	color: white;
 	background-color: #8080ff;
 }
@@ -254,12 +255,15 @@ h1 {
 }
 
 .text {
-	padding-left: 5%;
-	width: 65%;
-	font-size: medium;
+	display: inline-block;
+	width: 85%;
+	font-size: large;
 }
 
 .gif {
+	float: left;
+	padding-right: 2%;
+	padding-bottom: 1%;
 	width: 40%;
 	height: auto;
 }
