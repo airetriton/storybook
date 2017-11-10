@@ -1,6 +1,4 @@
 $( document ).ready(function() {
-    console.log( "ready!" );
-
 
 var s = Snap('svg');
 var text = 'Choose Your Adventure'

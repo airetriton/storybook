@@ -71,9 +71,36 @@ $(document).ready(function() {
         githubSignin();
       })
 
-    // $("#facebook").on("click", function(){
-    //     checkLoginState();
-    //   })
+    $(document).on("click", ".story-title, .choice", function() {
+      var sound = $(this).attr("data-sound");
+      var queryURL = "https://freesound.org/apiv2/search/text/?query="+newSound+"&filter=type:mp3&sort=duration_asc&token=0dLPbWt3qJbyxXWL3lfGKUHW575Bv5ThsCxITVEW";
+              
+              var queryURL2 = "https://freesound.org/apiv2/sounds/51715/"; 
+
+                  $.ajax({
+                      url: queryURL,
+                      method: "GET"
+                    })
+                    .done(function(response) {
+                      var results = response.data;
+                    });
+
+                  $.ajax({
+                      url: queryURL2,
+                      method: "GET",
+                      headers: {"Authorization": "Token JkKEUZNbmrCvQMQGlaW9OaKdash40HKv1a4Tl5Cm"}
+                      })
+                      .done(function(response) {
+                        var results = response.previews;
+                        //create audio element and assign it to a variable
+                        var storySound = document.createElement("Audio");
+                        //attribute the sound file
+                        storySound.setAttribute("src", results["preview-hq-mp3"]);
+                        storySound.load();
+                        storySound.play();
+                      });
+                  
+    });
 });
 
 function mainHTML() {
@@ -86,37 +113,7 @@ function mainHTML() {
 	}
 };
 
-$(document).on("click", ".choice, .story-title", function() {
-  var sound = $(this).attr("data-sound");
-  var queryURL = "https://freesound.org/apiv2/search/text/?query="+newSound+"&filter=type:mp3&sort=duration_asc&token=0dLPbWt3qJbyxXWL3lfGKUHW575Bv5ThsCxITVEW";
-          
-          var queryURL2 = "https://freesound.org/apiv2/sounds/51715/"; 
 
-              $.ajax({
-                  url: queryURL,
-                  method: "GET"
-                })
-                .done(function(response) {
-                  var results = response.data;
-                });
-
-              $.ajax({
-                  url: queryURL2,
-                  method: "GET",
-                  headers: {"Authorization": "Token JkKEUZNbmrCvQMQGlaW9OaKdash40HKv1a4Tl5Cm"}
-                  })
-                  .done(function(response) {
-                    var results = response.previews;
-                    //create audio element and assign it to a variable
-                    var storySound = document.createElement("Audio");
-                    //attribute the sound file
-                    storySound.setAttribute("src", results["preview-hq-mp3"]);
-                    storySound.load();
-                    storySound.play();
-                  });
-              
-
-});
 
 function storyHTML(currentPage) {
   
