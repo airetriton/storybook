@@ -5,7 +5,7 @@ html {
 
 body{
 	background-image: url("../images/paper.jpg");
-	margin-bottom: 60px;
+	margin-bottom: 50px;
 }
 
 button {
@@ -26,7 +26,7 @@ h1 {
 	justify-content: center;
 	align-items: flex-start;
 	align-content: center;
-	margin: 2% 0;
+	margin: 3% 0;
 }
 
 .choice {
@@ -71,6 +71,19 @@ h1 {
 	text-shadow: 2px 2px #ff66ff;
 }
 
+.navbar-brand {
+	padding: 0;
+}
+
+.navbar-nav {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-end;
+	align-items: stretch;
+	align-content: stretch;
+}
+
 #navbrand{
 	color: white;
 	font-family: 'Schoolbell', cursive;
@@ -81,7 +94,7 @@ h1 {
 #navbottom {
 	position: absolute;
 	width: 100%;
-	height: 60px;
+	height: 50px;
 	bottom: 0;
 	left: 0;
 	margin-top: 15px;
@@ -97,11 +110,10 @@ h1 {
 }
 
 #github {
-	height: 40px;
-	width: 40px;
+	height: 50px;
+	width: 50px;
 	float: right;
 	margin-right: 70%;
-	margin-top: 8%;
 }
 
 #purpletree{
@@ -122,7 +134,7 @@ h1 {
 }
 
 .main-area {
-	margin: 3% 12%;
+	margin: 3% 10%;
 	min-height: 100%;
 }
 
@@ -230,8 +242,8 @@ h1 {
 }
 
 #text{
-	position: relative;
-	left: 85%;
+	margin-top: 5%;
+	margin-right: 20%;
 	font-family: 'Schoolbell', cursive;
 	font-size: 25px;
 	font-weight: bold;
