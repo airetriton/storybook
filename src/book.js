@@ -48,12 +48,12 @@ var config = {
 $(document).ready(function() {
     
 	mainHTML();
-
+    //Story Title Click Event - setting up currentStory to the selectedStory
     $(".story").on("click", function(event){
     selectedStory = $(this).text();
-
 		var newStoryIndex =  $(".story").index(this);
 		currentStory = newStoryIndex;
+    //Wait Page
     var waitDiv = $("<div>");
     waitDiv.attr("id", "wait-div");
     var wait = $("<img>");
@@ -66,11 +66,11 @@ $(document).ready(function() {
 		
 
     });
-
+    // Github signin button
     $("#github").on("click", function(){
         githubSignin();
       })
-
+    // Freesound used for story titles and choices buttons
     $(document).on("click", ".story-title, .choice", function() {
       var sound = $(this).attr("data-sound");
       var queryURL = "https://freesound.org/apiv2/search/text/?query="+newSound+"&filter=type:mp3&sort=duration_asc&token=0dLPbWt3qJbyxXWL3lfGKUHW575Bv5ThsCxITVEW";
@@ -102,7 +102,7 @@ $(document).ready(function() {
                   
     });
 });
-
+//Dynamicaly creates links to the storyTitles
 function mainHTML() {
   for (var i = 0; i < stories.length; i++) {
 		var books = $("<a>");
@@ -113,10 +113,9 @@ function mainHTML() {
 	}
 };
 
-
-
+//Story Logic
 function storyHTML(currentPage) {
-  
+//Using Giphy to generate a picture for each story page based on json topics  
 var newGif = stories[currentStory][currentPage].topic;
 var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + newGif + "&rating=g&api_key=NfjGwXVTVCgEGMawDPEr5a6iJRkDaNTJ&limit=1"
 
@@ -160,12 +159,9 @@ var storyHTML = "<h1>" + stories[currentStory].storyTitle + "</h1>";
               
           })
           $(".main-area").append(choiceBtn);
-
       });        
-
-    
 };
-
+//Update choices based on json nextPage key
 function choiceUpdate(choice) {
     if (choice.indexOf("Story") > -1){
         if (choice.indexOf("Another") > -1){
