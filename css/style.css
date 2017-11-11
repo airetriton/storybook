@@ -293,6 +293,15 @@ h1 {
 		size: cover;
 	}
 
+	.story-title {
+		font-size: 25px;
+	}
+
+	#story1 {
+		/*background-image: url("../images/monster.png");*/
+		background-size: 100%;
+	}
+
 	.title {
 		width: 100%;
 		display: flex;
@@ -307,7 +316,14 @@ h1 {
 		width: 100%;
 	}
 
-
+	.navbar-nav {
+	    display: flex;
+	    flex-direction: row;
+	    flex-wrap: nowrap;
+	    justify-content: flex-end;
+	    align-items: stretch;
+	    align-content: stretch;
+	}
 	
 	a {
 		padding: 2px 7px!important;
