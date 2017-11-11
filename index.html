@@ -37,24 +37,23 @@
 <body>
   <!-- Top Nav -->
   <nav class="navbar navbar-default" id="navbar">
-    <div class="container wrap">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="index.html">
-          <img id="purpletree" alt="Brand" src="images/purpletree.png">
-        </a>
-      </div>
-      <div class="social col-lg-6 pull-right">
-        <ul>
-          <li id="text">Login</li>
-          <div class="fb-login-button" data-max-rows="1" data-size="small" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="true"></li>
-          <li><img id="github" src="images/github.png"></div>
-        </ul>
-      </div>
-      <!-- <ul class="nav navbar-nav navbar-right social">
-        
-      </ul> -->
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.html">
+        <img id="purpletree" alt="Brand" src="images/purpletree.png">
+      </a>
     </div>
-  </nav>
+    <div class="nav navbar-nav navbar-right">
+      <text id="text">Login</text>
+          <!--Adds custom LOGIN button-->
+   <a href="#" onclick="fb_login();"><img src="images/fbround.png" height=50px width=50px border="0"></a>
+
+    <!-- class adds custom LIKE and SHARE buttons-->
+  
+      <img id="github" src="images/github.png">
+    </div>
+  </div>
+</nav>
   <!-- main body container -->
   <div class="container-fluid">
     <div class="row">
