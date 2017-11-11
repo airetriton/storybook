@@ -303,45 +303,45 @@ h1 {
 	}
 
 	.story-title {
-		font-size: 25px;
+		font-size: 20px;
 	}
 
 	#story1 {
-		background-size: 100%;
+		background-size: 130%;
 		height: 85px;
 	}
 
 	#story2title {
-		font-size: 25px;
+		font-size: 20px;
 		padding-top: 15px;
 		padding-right: 25px;
 	}
 
 	#story2 {
-		background-size: 100%;
+		background-size: 130%;
 		height: 85px;
 	}
 
 	#story3title {
-		font-size: 25px;
+		font-size: 20px;
 		padding-top: 15px;
 		padding-left: 0;
 		margin-right: 50px;
 	}
 
 	#story3 {
-		background-size: 100%;
+		background-size: 130%;
 		height: 85px;
 	}
 
 	#story4title {
-		font-size: 25px;
+		font-size: 20px;
 		padding-top: 15px;
 		padding-right: 25px;
 	}
 
 	#story4 {
-		background-size: 100%;
+		background-size: 130%;
 		height: 85px;
 	}
 
@@ -360,7 +360,7 @@ h1 {
 	}
 
 	a {
-		padding: 2px 7px!important;
+		padding: 2px 5px!important;
 		height: 58px;
 	}
 
