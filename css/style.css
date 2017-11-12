@@ -77,12 +77,13 @@ h1 {
 }
 
 .navbar-nav {
+	padding-right: 3%;
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-end;
-    align-items: stretch;
-    align-content: stretch;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: baseline;
+	align-content: stretch;
 }
 
 #navbrand{
@@ -113,8 +114,7 @@ h1 {
 #github {
 	height: 50px;
 	width: 50px;
-	margin-left: 5%;
-	margin-right: 70%;
+	margin-left: 15%;
 }
 
 #purpletree{
@@ -326,7 +326,7 @@ h1 {
 	}
 
 	.text {
-		font-size: medium;
+		font-size: 22px;
 	}
 
 	.story-title {
